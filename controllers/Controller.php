@@ -40,7 +40,7 @@
                 . '.php';
 
             //Definir variável layoutPath para mostrar a vista layout
-            $layoutPath = 'views/layout'
+            $layoutPath = 'views/layout/'
                 . $layout
                 . '.php';
 
