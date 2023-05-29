@@ -13,8 +13,17 @@
             $pass = $_POST['fpass'];
 
             $auth = new Auth();
+            $logged = $auth->checkAuth();
 
-            //Falta método para verificar as credenciais -> checkAuth
+            //Verificar as credenciais -> checkAuth
+            if($auth -> checkAuth($user, $pass)) {
+                //Se houver utilizador, mostra outra vista
+                $this -> renderView('home', 'index');
+            }
+
+            else {
+                $this -> renderView('auth', 'index');
+            }
         }
 
         //Método para efetuar o logout

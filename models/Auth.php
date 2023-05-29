@@ -15,5 +15,35 @@
         public function logout() {
             session_destroy();
         }
+
+        /* Método para verificar as credenciais
+         * Devolve true se existir as credenciais
+         * Devolve false se não existir
+        */
+        public function checkAuth($user, $pass) {
+            //Encontrar o User com as credenciais $user e $pass na base de dados
+            $user = User::find_by_username_and_password($user, $pass);
+
+            /* Se o $user for diferente de null
+             * Guardar em variáveis de sessão (S_SESSION)
+             * id, username e password.
+            */
+            if($user != null) {
+                $_SESSION['id'] = $user->id;
+                $_SESSION['username'] = $user->username;
+                $_SESSION['role'] = $user->role;
+
+                return true;
+            }
+
+            else {
+                return false;
+            }
+        }
+
+        //Método para devolver o Role do utilizador (administrador ou funcionário)
+        public function getRole() {
+            return $_SESSION['role'];
+        }
     }
 ?>
