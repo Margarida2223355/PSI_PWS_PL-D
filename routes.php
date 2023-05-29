@@ -4,7 +4,7 @@
     return [
         'defaultRoute' => ['GET', 'HomeController', 'index'],
 
-        'home' => [
+        'auth' => [
             'index' => ['GET', 'HomeController', 'index']
         ]
     ];
