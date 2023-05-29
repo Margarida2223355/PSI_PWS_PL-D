@@ -24,7 +24,7 @@
                   </a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                  <a class="nav-link" href="index.php?c=home&a=index">Home</a>
+                  <a class="nav-link" href="index.php?c=auth&a=index">Home</a>
             </li>
          </ul>
       </nav>

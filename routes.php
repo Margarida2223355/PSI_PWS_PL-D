@@ -1,11 +1,11 @@
 <?php
-    require_once 'controllers/HomeController.php';
+    require_once 'controllers/AuthController.php';
 
     return [
-        'defaultRoute' => ['GET', 'HomeController', 'index'],
+        'defaultRoute' => ['GET', 'AuthController', 'index'],
 
         'auth' => [
-            'index' => ['GET', 'HomeController', 'index']
+            'index' => ['GET', 'AuthController', 'index']
         ]
     ];
 ?>
