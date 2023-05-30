@@ -1,23 +1,15 @@
-<div class="card-header">
-    <h3 class="card-title">Formulário Login</h3>
-</div>
-<form class="form-horizontal">
-    <div class="card-body">
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Username:</label>
-            <div class="caol-sm-10">
-                <input type="text" class="form-control" id="fuser">
-            </div>
+<main class="form-signin w-25 m-auto text-center">
+    <form action="index.php?c=auth&a=home" method="POST">
+        <h1 class="h3 my-3 fw-normal">FORMULÁRIO LOGIN</h1>
+        <div class="form-floating">
+            <input type="text" class="form-control" name="fuser">
+            <label for="floatingInput">Username</label>
         </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Password:</label>
-            <div class="caol-sm-10">
-                <input type="password" class="form-control" id="fpass">
-            </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="fpass">
+            <label for="floatingPassword">Password</label>
         </div>
-    </div>
-    <div class="card-footer">
-        <input type="submit" class="btn btn-info" value="Log in">
-        <input type="submit" class="btn btn-default float-right" value="Cancel">
-    </div>
-</form>
+        <button class="mt-3 btn btn-lg btn-primary" type="submit">Login</button>
+        <p class="mt-4 text-muted">@ 2022-2023</p>
+    </form>
+</main>
