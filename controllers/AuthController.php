@@ -13,12 +13,11 @@
             $pass = $_POST['fpass'];
 
             $auth = new Auth();
-            $logged = $auth->checkAuth();
 
             //Verificar as credenciais -> checkAuth
             if($auth -> checkAuth($user, $pass)) {
                 //Se houver utilizador, mostra outra vista
-                $this -> renderView('home', 'index');
+                $this -> renderView('auth', 'home');
             }
 
             else {

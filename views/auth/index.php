@@ -1,5 +1,5 @@
 <main class="form-signin w-25 m-auto text-center">
-    <form action="index.php?c=auth&a=home" method="POST">
+    <form action="index.php?c=auth&a=login" method="POST">
         <h1 class="h3 my-3 fw-normal">FORMULÁRIO LOGIN</h1>
         <div class="form-floating">
             <input type="text" class="form-control" name="fuser">

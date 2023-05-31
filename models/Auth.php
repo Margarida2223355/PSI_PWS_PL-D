@@ -1,10 +1,6 @@
 <?php
     use Auth as GlobalAuth;
 
-    //Definir credenciais do administrador
-    const ADMIN = 'pws';
-    const PASS = '123';
-
     class Auth {
         //Iniciar a sessão no construtor da classe Auth
         public function __construct() {
@@ -22,16 +18,16 @@
         */
         public function checkAuth($user, $pass) {
             //Encontrar o User com as credenciais $user e $pass na base de dados
-            $user = User::find_by_username_and_password($user, $pass);
+            $user_found = User::find_by_username_and_password($user, $pass);
 
             /* Se o $user for diferente de null
              * Guardar em variáveis de sessão (S_SESSION)
              * id, username e password.
             */
-            if($user != null) {
-                $_SESSION['id'] = $user->id;
-                $_SESSION['username'] = $user->username;
-                $_SESSION['role'] = $user->role;
+            if($user_found != null) {
+                $_SESSION['id'] = $user_found->id;
+                $_SESSION['username'] = $user_found->username;
+                $_SESSION['role'] = $user_found->role;
 
                 return true;
             }
