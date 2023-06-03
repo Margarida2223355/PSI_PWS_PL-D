@@ -3,6 +3,9 @@
 
     define('APP_NAME', 'Folha de Obra');
     define('INVALID_ACCESS_ROUTE', 'c=home&a=index');
+    define('ADMINISTRADOR', 'Administrador');
+    define('CLIENTE', 'Cliente');
+    define('FUNCIONARIO', 'Funcionario');
 
     //Ligação à base de dados
     ActiveRecord\Config::initialize(function($cfg) {
