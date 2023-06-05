@@ -47,5 +47,15 @@
             //Incluir ficheiro do layout
             require_once ($layoutPath);
         }
+
+        /* Definir método para receber parametros pelo método POST */
+        protected function getHTTPPostParam($key) {
+            return $_POST[$key] ?? '';
+        }
+
+        /* Definir método para receber parametros pelo método GET */
+        protected function getHTTPGetParam($key) {
+            return $_GET[$key] ?? '';
+        }
     }
 ?>
