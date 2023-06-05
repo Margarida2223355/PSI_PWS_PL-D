@@ -43,7 +43,7 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Atualizar Password e Email</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de atualização de Password e Email -->
+                                <a href="index.php?c=worker&a=index" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de atualização de Password e Email -->
                             </div>
                         </div>
                     </div>
