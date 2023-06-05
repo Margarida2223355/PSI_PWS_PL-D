@@ -22,7 +22,9 @@
             /* Caso as informações sejam válidas, guardar o utilizador
              * e voltar para a vista Home.
              * 
-             * Caso contrário, mostra novamente a vista de atualizar.
+             * Caso contrário, mostra novamente a vista de atualizar
+             * e envia o $user para a vista. Isto para que apresente o erro
+             * caso o utilizador não seja válido (falta password e/ou email).
             */
             if($user -> is_valid()) {
                 $user -> save();
@@ -30,7 +32,7 @@
             }
 
             else {
-                $this -> renderView('worker', 'index');
+                $this -> renderView('worker', 'index',['user' => $user]);
             }
         }
     }

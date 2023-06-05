@@ -11,6 +11,12 @@
             <input type="password" class="form-control" name="password">
             <label for="floatingPassword">Password</label>
         </div>
+        <?php
+            if(isset($user -> errors)) {
+                echo $user -> errors -> on('email');
+                echo $user -> errors -> on('password');
+            }
+        ?>
         <button class="mt-3 btn btn-lg btn-primary" type="submit">Atualizar</button>
         <p class="mt-4 text-muted">@ 2022-2023</p>
     </form>
