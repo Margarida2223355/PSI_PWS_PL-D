@@ -32,6 +32,10 @@
             //Converter o array associativo num conjunto de variáveis visíveis
             extract($data);
 
+            /* Estanciar uma autenticação para termos acesso aos métodos
+             * da classe Auth (getRole, getId, getUsername) em qualquer vista. */
+            $auth = new Auth();
+
             //Definir variável ViewPath que mostrará a vista pretendida
             $viewPath = 'views/'
                 . $controllerPrefix

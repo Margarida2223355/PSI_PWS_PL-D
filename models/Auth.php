@@ -37,9 +37,19 @@
             }
         }
 
-        //Método para devolver o Role do utilizador (administrador ou funcionário)
+        //Método para devolver o Role do utilizador (administrador, funcionário ou cliente)
         public function getRole() {
             return $_SESSION['role'];
+        }
+
+        //Método para devolver o Id do utilizador
+        public function getId() {
+            return $_SESSION['id'];
+        }
+
+        //Método para devolver o Username do utilizador
+        public function getUsername() {
+            return $_SESSION['username'];
         }
     }
 ?>
