@@ -11,7 +11,8 @@
         ],
 
         'worker' => [
-            'index' => ['GET', 'WorkerController', 'index']
+            'index' => ['GET', 'WorkerController', 'index'],
+            'update' => ['POST', 'WorkerController', 'update']
         ]
     ];
 ?>

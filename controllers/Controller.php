@@ -53,13 +53,8 @@
         }
 
         /* Definir método para receber parametros pelo método POST */
-        protected function getHTTPPostParam($key) {
-            return $_POST[$key] ?? '';
-        }
-
-        /* Definir método para receber parametros pelo método GET */
-        protected function getHTTPGetParam($key) {
-            return $_GET[$key] ?? '';
+        protected function getHTTPPost() {
+            return $_POST;
         }
     }
 ?>

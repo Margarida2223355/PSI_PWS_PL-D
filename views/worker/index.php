@@ -1,5 +1,5 @@
 <main class="form-signin w-25 m-auto text-center">
-    <form action="index.php" method="POST">
+    <form action="index.php?c=worker&a=update&id=<?= $auth -> getId(); ?>" method="POST">
         <h1 class="h3 my-3 fw-normal">
             Funcionário <b><?= $auth -> getUsername(); ?></b>
         </h1>
