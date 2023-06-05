@@ -1,5 +1,5 @@
 <!-- Para teste -->
-<?= $_SESSION['role']; ?>
+<?= $auth -> getRole(); ?>
 <!-- Para teste -->
 
 <div class="album bg-light">
@@ -9,7 +9,7 @@
         <!-- BLOCO DE CLIENTES -->
         <?php
             //Abrir o bloco php para aprensentar as opções para um Cliente
-            if($_SESSION['role'] == CLIENTE) { ?>
+            if($auth -> getRole() == CLIENTE) { ?>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card shadow-sm">
@@ -38,7 +38,7 @@
             <?php
                 }
                 //Abrir o bloco php para aprensentar as opções para um Funcionário
-                if(($_SESSION['role'] == FUNCIONARIO) || ($_SESSION['role'] == ADMINISTRADOR)) { ?>
+                if(($auth -> getRole() == FUNCIONARIO) || ($auth -> getRole() == ADMINISTRADOR)) { ?>
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
@@ -89,7 +89,7 @@
                     </div>
             <?php
                 //Abrir o bloco php para aprensentar as opções para um Administrador
-                if($_SESSION['role'] == ADMINISTRADOR) { ?>
+                if($auth -> getRole() == ADMINISTRADOR) { ?>
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
