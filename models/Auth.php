@@ -4,7 +4,10 @@
     class Auth {
         //Iniciar a sessão no construtor da classe Auth
         public function __construct() {
-            session_start();
+            //Iniciar a sessão apenas se a mesma não existir
+            if(!isset($_SESSION['id'])) {
+                session_start();
+            }
         }
 
         //Método para fechar sessão
