@@ -58,8 +58,10 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">Registo de Clientes</h5>
-                                <a href="index.php?c=cliente&a=create" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de registo de clientes -->
+                                <h5 class="card-title">Clientes</h5>
+                                <a href="index.php?c=cliente&a=create" class="btn btn-primary">Criar</a> <!-- Botão para abrir vista de registo de clientes -->
+                                <a href="index.php?c=cliente&a=show&" class="btn btn-primary">Show</a> 
+                                <!-- <a href="index.php?c=cliente&a=delete&id=<?php echo $auth -> getId() ?>" class="btn btn-primary">Remover</a>  -->
                             </div>
                         </div>
                     </div>
@@ -101,8 +103,11 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">Configurar dados de Empresa</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de configuração de dados da empresa -->
+                                <h5 class="card-title">Empresa</h5>
+                                <a href="index.php?c=empresa&a=create" class="btn btn-primary">Criar</a>
+                                <a href="index.php?c=empresa&a=edit&id=1" class="btn btn-primary">Editar</a>
+                                <a href="index.php?c=empresa&a=show&id=1" class="btn btn-primary">Ver</a>
+                                 <!-- Botão para abrir vista de configuração de dados da empresa -->
                             </div>
                         </div>
                     </div>

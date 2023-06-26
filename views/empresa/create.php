@@ -116,7 +116,7 @@
         </p>
         <br>
         <button class="btn btn-primary" type="submit">Submit</button>
-        <a href="index.php?c=empresa&a=index" class="btn btn-info" role="button">Voltar a trás</a>
+        <a href="index.php?c=auth&a=home" class="btn btn-info" role="button">Voltar</a>
     </div>
 </form>
 </div>

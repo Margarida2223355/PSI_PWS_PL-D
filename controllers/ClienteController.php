@@ -1,19 +1,36 @@
 <?php
     require_once './controllers/Controller.php';
 
-    class WorkerController extends Controller {
+    class ClienteController extends Controller {
 
         public function __construct()
         {
-            $this->authorizationFilter(['Administrador','Funcionario']);
+            // $this->authorizationFilter(['Administrador','Funcionario']);
+        }
+        public function home() {
+            $this -> renderView('cliente', 'home');
+        }
+        public function show() {
+            $users = User::All();
+            $clientes = [];
+
+            foreach ($users as $user) {
+                if ($user->role == "Cliente") {
+                    $clientes[] = $user;
+                }
+            }
+            if (!empty($clientes)) {
+                $this->renderView('cliente','show',['clientes'=> $clientes]);
+            }
         }
 
-        public function edit() {
-            $this -> renderView('worker', 'edit');
+        public function edit($id) {
+            $cliente = User::find($id);
+            $this -> renderView('cliente', 'edit',['cliente'=>$cliente]);
         }
 
         public function create(){
-            $this->renderView('worker','create');
+            $this->renderView('cliente','create');
         }
 
         public function store(){
@@ -43,12 +60,19 @@
             */
             if($user -> is_valid()) {
                 $user -> save();
-                $this -> renderView('auth', 'home');
+                $this -> redirectToRoute('auth', 'home');
             }
 
             else {
-                $this -> renderView('worker', 'edit',['user' => $user]);
+                $this -> renderView('cliente', 'edit',['user' => $user]);
             }
         }
+        public function delete($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        //redirecionar para a home
+        $this->redirectToRoute('auth','home');
+    }
     }
 ?>

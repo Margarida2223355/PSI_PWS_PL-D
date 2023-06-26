@@ -7,6 +7,9 @@
             $this -> renderView('auth', 'index');
         }
 
+        public function home(){
+            $this -> renderView('auth','home');
+        }
         //Método para efetuar o login
         public function login() {
             $user = $_POST['fuser'];
@@ -17,7 +20,7 @@
             //Verificar as credenciais -> checkAuth
             if($auth -> checkAuth($user, $pass)) {
                 //Se houver utilizador, mostra outra vista
-                $this -> renderView('worker', 'home');
+                $this -> renderView('auth', 'home');
             }
 
             else {

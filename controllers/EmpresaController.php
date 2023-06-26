@@ -11,19 +11,19 @@ Class EmpresaController extends Controller
     }
 
 
-   public function index()
-   {
-       $auth = new Auth();
-       if($auth->getRole() == 'administrador') {
-           $empresas = Empresa::all();
-           //mostrar a vista index passando os dados por parâmetro
-           $this->renderView('empresa', 'index', ['empresas' => $empresas]);
-       }
-       else if($auth->getRole() == 'funcionário')
-       {
-           $this->redirectToRoute('bo', 'index');
-       }
-   }
+//    public function index()
+//    {
+//        $auth = new Auth();
+//        if($auth->getRole() == 'administrador') {
+//            $empresas = Empresa::all();
+//            //mostrar a vista index passando os dados por parâmetro
+//            $this->renderView('empresa', 'index', ['empresas' => $empresas]);
+//        }
+//        else if($auth->getRole() == 'funcionário')
+//        {
+//            $this->redirectToRoute('bo', 'index');
+//        }
+//    }
 
     public function create()
     {

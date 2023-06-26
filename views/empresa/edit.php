@@ -5,31 +5,11 @@
         <br>
         <label>Designação Social:</label>
         <input class="form-control" type="text" name="designacaosocial" value="<?= $empresa->designacaosocial ?>">
-        <p><?php
-            if(isset($empresa->errors)) {
-                if (is_array($empresa->errors->on('designacaosocial'))) {
-                    foreach ($empresa->errors->on('designacaosocial') as $error) {
-                        echo $error . '<br>';
-                    }
-                } else {
-                    echo $empresa->errors->on('designacaosocial');
-                }
-            }
-            ?>
+        <p>
         </p>
         <label>Email:</label>
         <input class="form-control" type="text" name="Email" value="<?= $empresa->email ?>">
-        <p><?php
-            if(isset($empresa->errors)) {
-                if (is_array($empresa->errors->on('email'))) {
-                    foreach ($empresa->errors->on('email') as $error) {
-                        echo $error . '<br>';
-                    }
-                } else {
-                    echo $empresa->errors->on('email');
-                }
-            }
-            ?>
+        <p>
         </p>
         <label>Telefone:</label>
         <input class="form-control" type="text" name="telefone" value="<?= $empresa->telefone ?>">
@@ -116,7 +96,7 @@
             ?>
         </p>
         <button class="btn btn-primary" type="submit">Submit</button>
-        <a href="index.php?c=empresa&a=index" class="btn btn-info" role="button">Voltar a trás</a>
+        <a href="index.php?c=auth&a=home" class="btn btn-info" role="button">Voltar</a>
     </div>
 </form>
 </div>

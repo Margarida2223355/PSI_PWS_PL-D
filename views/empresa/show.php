@@ -47,7 +47,7 @@
     </div>
     <div class="col-sm-6">
         <p>
-            <a href="index.php?c=empresa&a=index" class="btn btn-info" role="button">Voltar a trás</a>
+            <a href="index.php?c=auth&a=home" class="btn btn-info" role="button">Voltar</a>
         </p>
     </div>
 </div> <!-- /row -->

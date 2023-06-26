@@ -12,7 +12,7 @@
                <img src="public/img/logo.png" alt="IPleiria logo" width="60" height="40">
                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                   <li>
-                     <a href="index.php?c=auth&a=index" class="nav-link px-2 text-secondary">Home</a>
+                     <a href="index.php?c=auth&a=home" class="nav-link px-2 text-secondary">Home</a>
                   </li>
                   <li><a href="index.php?c=auth&a=logout" >Sair</a></li>
                </ul>
