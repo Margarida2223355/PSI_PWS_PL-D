@@ -14,7 +14,7 @@
                   <li>
                      <a href="index.php?c=auth&a=home" class="nav-link px-2 text-secondary">Home</a>
                   </li>
-                  <li><a href="index.php?c=auth&a=logout" >Sair</a></li>
+                  <li><a href="index.php?c=auth&a=logout" class="nav-link px-2 text-secondary">Sair</a></li>
                </ul>
             </div>
          </div>
