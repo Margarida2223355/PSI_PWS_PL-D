@@ -3,11 +3,6 @@
 
     class WorkerController extends Controller {
 
-        public function __construct()
-        {
-            $this->authorizationFilter(['Administrador','Funcionario']);
-        }
-
         public function edit() {
             $this -> renderView('worker', 'edit');
         }

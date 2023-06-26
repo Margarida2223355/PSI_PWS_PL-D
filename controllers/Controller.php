@@ -56,22 +56,5 @@
         protected function getHTTPPost() {
             return $_POST;
         }
-
-        /* Verificar se o utilizador esta logado */
-        protected function authenticationFilter(){
-            $auth = new Auth();
-            if(!$auth->isLoggedIn()){
-                header('index.php' . INVALID_ACESS_ROUTE);
-            }
-        }
-
-        /* Verificar se o utilizador tem autorização para aceder a pagina */
-        protected function authorizationFilter($roles){
-            $auth = new Auth();
-
-            if (!$auth->isLoggedInAs($roles)){
-                header('index.php?'.INVALID_ACESS_ROUTE);
-            }
-        }
     }
 ?>

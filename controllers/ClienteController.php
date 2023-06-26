@@ -3,10 +3,6 @@
 
     class ClienteController extends Controller {
 
-        public function __construct()
-        {
-            // $this->authorizationFilter(['Administrador','Funcionario']);
-        }
         public function home() {
             $this -> renderView('cliente', 'home');
         }

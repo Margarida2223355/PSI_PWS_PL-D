@@ -5,12 +5,6 @@ require_once 'controllers/Controller.php';
 Class EmpresaController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->authenticationFilter('Administrador');
-    }
-
-
 //    public function index()
 //    {
 //        $auth = new Auth();
