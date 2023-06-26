@@ -17,7 +17,7 @@
             //Verificar as credenciais -> checkAuth
             if($auth -> checkAuth($user, $pass)) {
                 //Se houver utilizador, mostra outra vista
-                $this -> renderView('auth', 'home');
+                $this -> renderView('worker', 'home');
             }
 
             else {

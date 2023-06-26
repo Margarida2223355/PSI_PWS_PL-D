@@ -43,7 +43,7 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Atualizar Password e Email</h5>
-                                <a href="index.php?c=worker&a=index" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de atualização de Password e Email -->
+                                <a href="index.php?c=worker&a=edit" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de atualização de Password e Email -->
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Registo de Clientes</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de registo de clientes -->
+                                <a href="index.php?c=cliente&a=create" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de registo de clientes -->
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Criar/Administrar Funcionário</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de criação/administração de contas dos funcionários -->
+                                <a href="index.php?c=worker&a=create" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de criação/administração de contas dos funcionários -->
                             </div>
                         </div>
                     </div>

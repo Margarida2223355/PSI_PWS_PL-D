@@ -2,10 +2,25 @@
     require_once './controllers/Controller.php';
 
     class WorkerController extends Controller {
-        public function index() {
-            $this -> renderView('worker', 'index');
+
+        public function __construct()
+        {
+            $this->authorizationFilter(['Administrador','Funcionario']);
         }
 
+        public function edit() {
+            $this -> renderView('worker', 'edit');
+        }
+
+        public function create(){
+            $this->renderView('worker','create');
+        }
+
+        public function store(){
+            $user = new User($this->getHTTPPost());
+            $user->save();
+            $this->renderView('worker','home');
+        }
         /* Método para atualizar informações na base de dados.
          * Este método recebe o id do utilizador.
         */
@@ -32,7 +47,7 @@
             }
 
             else {
-                $this -> renderView('worker', 'index',['user' => $user]);
+                $this -> renderView('worker', 'edit',['user' => $user]);
             }
         }
     }

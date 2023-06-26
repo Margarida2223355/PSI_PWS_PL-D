@@ -5,7 +5,7 @@
         //Iniciar a sessão no construtor da classe Auth
         public function __construct() {
             //Iniciar a sessão apenas se a mesma não existir
-            if(!isset($_SESSION['id'])) {
+            if(!isset($_SESSION)) {
                 session_start();
             }
         }
@@ -53,6 +53,22 @@
         //Método para devolver o Username do utilizador
         public function getUsername() {
             return $_SESSION['username'];
+        }
+
+        public function isLoggedIn(){
+            if(isset($_SESSION['username'])){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public function isLoggedInAs($roles=[]){
+            if($this->isLoggedIn()){
+                $role = $this->getRole();
+                return in_array($role, $roles);
+            }
         }
     }
 ?>
