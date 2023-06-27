@@ -9,6 +9,7 @@
         public function home() {
             $this -> renderView('cliente', 'home');
         }
+        
         public function show() {
             $users = User::All();
             $clientes = [];

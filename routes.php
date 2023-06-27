@@ -23,6 +23,7 @@
             'show' => ['GET', 'WorkerController', 'show'],
             'store' => ['POST', 'WorkerController', 'store'],
         ],
+
         'cliente' => [
             'home' => ['GET', 'ClienteController', 'home'],
             'show' => ['GET', 'ClienteController', 'show'],
@@ -32,6 +33,7 @@
             'store' => ['POST', 'ClienteController', 'store'],
             'delete' => ['GET', 'ClienteController', 'delete'],
         ],
+
         'empresa' => [
             'index' => ['GET', 'EmpresaController', 'index'],
             'show' => ['GET', 'EmpresaController', 'show'],

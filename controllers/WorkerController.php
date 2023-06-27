@@ -2,16 +2,16 @@
     require_once './controllers/Controller.php';
 
     class WorkerController extends Controller {
+        
+        public function __construct() {
+            $this -> autheticationFilter();
+        }
 
         /* Método para editar funcionário.
          *
          * Recebe o id do funcionário e mostra formulário
          * para editar as informações do funcionário.
         */
-        public function __construct() {
-            $this -> authenticationFilter();
-        }
-
         public function edit($id) {
             //Encontra funcionário pelo id
             $worker = User::find($id);
