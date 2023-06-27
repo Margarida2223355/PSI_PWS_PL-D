@@ -9,7 +9,7 @@
          * para editar as informações do funcionário.
         */
         public function __construct() {
-            $this -> autheticationFilter();
+            $this -> authenticationFilter();
         }
 
         public function edit($id) {
@@ -37,10 +37,9 @@
          * Inserir novo user onde o role tem de ser "Funcionario".
         */
         public function store(){
-            $worker = $this -> getHTTPPost();
-            $worker['role'] = 'Funcionario';
 
-            $user = new User($worker);
+            $user = new User($this -> getHTTPPost());
+            $user -> role = 'Funcionario';
 
             //Verifica se o funcionário é válido
             if($user -> is_valid()) {

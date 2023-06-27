@@ -3,7 +3,7 @@
 
     class ClienteController extends Controller {
         public function __construct() {
-            $this -> autheticationFilter();
+            $this -> authenticationFilter();
         }
 
         public function home() {

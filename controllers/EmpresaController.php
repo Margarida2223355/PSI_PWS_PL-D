@@ -20,7 +20,7 @@ Class EmpresaController extends Controller
 //    }
 
     public function __construct() {
-        $this -> autheticationFilter();
+        $this -> authenticationFilter();
     }
 
     public function create()
