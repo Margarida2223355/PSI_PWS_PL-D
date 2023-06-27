@@ -60,7 +60,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Clientes</h5>
                                 <a href="index.php?c=cliente&a=create" class="btn btn-primary">Criar</a> <!-- Botão para abrir vista de registo de clientes -->
-                                <a href="index.php?c=cliente&a=show&" class="btn btn-primary">Show</a> 
+                                <a href="index.php?c=cliente&a=show&" class="btn btn-primary">Mostrar</a> 
                                 <!-- <a href="index.php?c=cliente&a=delete&id=<?php echo $auth -> getId() ?>" class="btn btn-primary">Remover</a>  -->
                             </div>
                         </div>
@@ -96,7 +96,8 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Criar/Administrar Funcionário</h5>
-                                <a href="index.php?c=worker&a=create" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de criação/administração de contas dos funcionários -->
+                                <a href="index.php?c=worker&a=create" class="btn btn-primary">Criar</a> <!-- Botão para abrir vista de criação de contas dos funcionários -->
+                                <a href="index.php?c=worker&a=index" class="btn btn-primary">Mostrar</a> <!-- Botão para mostrar todos os funcionários. Depois escolhemos se queremos editar ou ver apenas -->
                             </div>
                         </div>
                     </div>

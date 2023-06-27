@@ -18,17 +18,18 @@
             
             'edit' => ['GET', 'WorkerController', 'edit'],
             'update' => ['POST', 'WorkerController', 'update'],
-            'create' => ["GET", 'WorkerController', 'create'],
-            'store' => ["POST", 'WorkerController', 'store'],
-            'delete' => ['GET', 'WorkerController', 'delete'],
+            'create' => ['GET', 'WorkerController', 'create'],
+            'index' => ['GET', 'WorkerController', 'index'],
+            'show' => ['GET', 'WorkerController', 'show'],
+            'store' => ['POST', 'WorkerController', 'store'],
         ],
         'cliente' => [
             'home' => ['GET', 'ClienteController', 'home'],
             'show' => ['GET', 'ClienteController', 'show'],
             'edit' => ['GET', 'ClienteController', 'edit'],
             'update' => ['POST', 'ClienteController', 'update'],
-            'create' => ["GET", 'ClienteController', 'create'],
-            'store' => ["POST", 'ClienteController', 'store'],
+            'create' => ['GET', 'ClienteController', 'create'],
+            'store' => ['POST', 'ClienteController', 'store'],
             'delete' => ['GET', 'ClienteController', 'delete'],
         ],
         'empresa' => [
