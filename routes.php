@@ -3,6 +3,8 @@
     require_once 'controllers/WorkerController.php';
     require_once 'controllers/EmpresaController.php';
     require_once 'controllers/ClienteController.php';
+    require_once 'controllers/ServicoController.php';
+    require_once 'controllers/IvaController.php';
 
     return [
         'defaultRoute' => ['GET', 'AuthController', 'index'],
@@ -35,13 +37,28 @@
         ],
 
         'empresa' => [
-            'index' => ['GET', 'EmpresaController', 'index'],
             'show' => ['GET', 'EmpresaController', 'show'],
             'edit' => ['GET', 'EmpresaController', 'edit'],
             'create' => ['GET', 'EmpresaController', 'create'],
             'store' => ['POST', 'EmpresaController', 'store'], 
             'update' => ['POST', 'EmpresaController', 'update'],
             'delete' => ['GET', 'EmpresaController', 'delete'],
+        ],
+        'servico' => [
+            'show' => ['GET', 'ServicoController', 'show'],
+            'edit' => ['GET', 'ServicoController', 'edit'],
+            'create' => ['GET', 'ServicoController', 'create'],
+            'store' => ['POST', 'ServicoController', 'store'], 
+            'update' => ['POST', 'ServicoController', 'update'],
+            'delete' => ['GET', 'ServicoController', 'delete'],
+        ],
+        'iva' => [
+            'show' => ['GET', 'IvaController', 'show'],
+            'edit' => ['GET', 'IvaController', 'edit'],
+            'create' => ['GET', 'IvaController', 'create'],
+            'store' => ['POST', 'IvaController', 'store'], 
+            'update' => ['POST', 'IvaController', 'update'],
+            'delete' => ['GET', 'IvaController', 'delete'],
         ],
     ];
 ?>

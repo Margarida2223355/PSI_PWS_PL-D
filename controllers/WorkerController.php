@@ -12,6 +12,15 @@
          * Recebe o id do funcionário e mostra formulário
          * para editar as informações do funcionário.
         */
+        public function __construct() {
+            $this -> authenticationFilter();
+        }
+
+        /* Método para editar funcionário.
+         *
+         * Recebe o id do funcionário e mostra formulário
+         * para editar as informações do funcionário.
+        */
         public function edit($id) {
             //Encontra funcionário pelo id
             $worker = User::find($id);
@@ -37,10 +46,9 @@
          * Inserir novo user onde o role tem de ser "Funcionario".
         */
         public function store(){
-
+            
             $user = new User($this -> getHTTPPost());
             $user -> role = 'Funcionario';
-
             //Verifica se o funcionário é válido
             if($user -> is_valid()) {
                 $user -> save();

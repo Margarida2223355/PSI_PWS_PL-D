@@ -61,7 +61,6 @@
                                 <h5 class="card-title">Clientes</h5>
                                 <a href="index.php?c=cliente&a=create" class="btn btn-primary">Criar</a> <!-- Botão para abrir vista de registo de clientes -->
                                 <a href="index.php?c=cliente&a=show&" class="btn btn-primary">Mostrar</a> 
-                                <!-- <a href="index.php?c=cliente&a=delete&id=<?php echo $auth -> getId() ?>" class="btn btn-primary">Remover</a>  -->
                             </div>
                         </div>
                     </div>

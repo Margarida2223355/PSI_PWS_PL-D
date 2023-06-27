@@ -1,6 +1,5 @@
 <?php
     require_once './models/Auth.php';
-
     //Criar a classe Controller
     class Controller {
         /* Definir método de redirecionar para rota.
