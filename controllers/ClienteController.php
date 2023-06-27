@@ -2,10 +2,11 @@
     require_once './controllers/Controller.php';
 
     class ClienteController extends Controller {
+
         public function __construct() {
             $this -> authenticationFilter();
         }
-
+        
         public function home() {
             $this -> renderView('cliente', 'home');
         }

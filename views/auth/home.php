@@ -43,7 +43,7 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Atualizar Password e Email</h5>
-                                <a href="index.php?c=worker&a=edit" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de atualização de Password e Email -->
+                                <a href="index.php?c=worker&a=edit&id=<?php echo $auth -> getId() ?>" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de atualização de Password e Email -->
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,6 @@
                                 <h5 class="card-title">Clientes</h5>
                                 <a href="index.php?c=cliente&a=create" class="btn btn-primary">Criar</a> <!-- Botão para abrir vista de registo de clientes -->
                                 <a href="index.php?c=cliente&a=show&" class="btn btn-primary">Mostrar</a> 
-                                <!-- <a href="index.php?c=cliente&a=delete&id=<?php echo $auth -> getId() ?>" class="btn btn-primary">Remover</a>  -->
                             </div>
                         </div>
                     </div>

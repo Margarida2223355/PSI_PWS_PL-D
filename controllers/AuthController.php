@@ -3,7 +3,7 @@
     require_once './models/Auth.php';
 
     class AuthController extends Controller {
-
+        
         public function index() {
             $this -> renderView('auth', 'index');
         }

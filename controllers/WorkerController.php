@@ -11,7 +11,6 @@
         public function __construct() {
             $this -> authenticationFilter();
         }
-
         public function edit($id) {
             //Encontra funcionário pelo id
             $worker = User::find($id);
@@ -37,10 +36,9 @@
          * Inserir novo user onde o role tem de ser "Funcionario".
         */
         public function store(){
-
+            
             $user = new User($this -> getHTTPPost());
             $user -> role = 'Funcionario';
-
             //Verifica se o funcionário é válido
             if($user -> is_valid()) {
                 $user -> save();
