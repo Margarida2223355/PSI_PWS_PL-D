@@ -61,7 +61,7 @@
         protected function authenticationFilter(){
             $auth = new Auth();
             if(!$auth->isLoggedIn()){
-                header('index.php' . INVALID_ACESS_ROUTE);
+                header('Location: index.php?' . INVALID_ACESS_ROUTE);
             }
         }
     }

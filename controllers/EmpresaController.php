@@ -19,6 +19,10 @@ Class EmpresaController extends Controller
 //        }
 //    }
 
+    public function __construct() {
+        $this -> autheticationFilter();
+    }
+
     public function create()
     {
         //mostrar a vista create

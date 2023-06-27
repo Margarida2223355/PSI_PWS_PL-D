@@ -3,6 +3,10 @@
     require_once './models/Auth.php';
 
     class AuthController extends Controller {
+        public function __construct() {
+            $this -> autheticationFilter();
+        }
+
         public function index() {
             $this -> renderView('auth', 'index');
         }

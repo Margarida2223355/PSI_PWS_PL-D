@@ -8,6 +8,10 @@
          * Recebe o id do funcionário e mostra formulário
          * para editar as informações do funcionário.
         */
+        public function __construct() {
+            $this -> autheticationFilter();
+        }
+
         public function edit($id) {
             //Encontra funcionário pelo id
             $worker = User::find($id);
