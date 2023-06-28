@@ -10,15 +10,8 @@ Class IvaController extends Controller
     }
 
     public function store()
-    {
+    { 
         $iva = new Iva($this-> getHTTPPost());
-
-        // // Converte o valor para booleano
-        // if ($iva->em_vigor === 'true') {
-        //     $iva->em_vigor = true;
-        // } else {
-        //     $iva->em_vigor = false;
-        // }
 
         $iva->save();
         $this->renderView('auth', 'home');

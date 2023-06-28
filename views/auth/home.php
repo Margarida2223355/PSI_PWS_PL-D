@@ -67,8 +67,10 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">Gestão Serviços</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de gestão de serviços -->
+                                <h5 class="card-title">Serviços</h5>
+                                <a href="index.php?c=servico&a=create" class="btn btn-primary">Criar</a>
+                                <a href="index.php?c=servico&a=show" class="btn btn-primary">Mostrar</a> <!-- Botão para abrir vista de gestão de serviços -->
+
                             </div>
                         </div>
                     </div>
@@ -76,7 +78,8 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Gestão de Taxas de IVA</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de gestão de taxas de IVA -->
+                                <a href="index.php?c=iva&a=create" class="btn btn-primary">Criar</a>
+                                <a href="index.php?c=iva&a=show" class="btn btn-primary">Mostrar</a> <!-- Botão para abrir vista de gestão de taxas de IVA -->
                             </div>
                         </div>
                     </div>

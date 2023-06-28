@@ -3,10 +3,6 @@
 
     class WorkerController extends Controller {
         
-        public function __construct() {
-            $this -> autheticationFilter();
-        }
-
         /* Método para editar funcionário.
          *
          * Recebe o id do funcionário e mostra formulário

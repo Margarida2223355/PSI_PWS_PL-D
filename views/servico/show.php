@@ -10,14 +10,16 @@
     </thead>
     <tbody>
         <?php
-            foreach($servicos as $servico) { ?>
+            foreach($servicos as $servico) { 
+                $iva= Iva::find($servico->iva_id);
+                ?>
+                
                 <tr>
                     <th><?= $servico -> id?></th>
                     <td><?= $servico -> descricao?></td>
                     <td><?= $servico -> preco_hora?></td>
-                    <td><?= $servico -> iva?></td>
+                    <td><?= $iva->percentagem?>%</td>
                     <td>
-                        <a href="index.php?c=servico&a=show&id=<?=$servico->id ?>" class="btn btn-info" role="button">Mostrar</a>
                         <a href="index.php?c=servico&a=edit&id=<?=$servico->id ?>" class="btn btn-info" role="button">Editar</a>
                         <a href="index.php?c=servico&a=remove&id=<?=$servico->id ?>" class="btn btn-info" role="button">Remover</a>
                     </td>

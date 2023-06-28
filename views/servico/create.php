@@ -14,8 +14,10 @@
                     <label for="floatingInput">Preco/Hora</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" name="iva">
-                    <label for="floatingInput">Iva</label>
+                <label for="iva_id">Iva:</label><br>
+                    <select name="iva_id"> 
+                        <?php foreach($ivas as $iva){?> 
+                            <option value="<?= $iva->iva_id?>"> <?= $iva->percentagem; ?>%</option> <?php } ?> </select>
                 </div>
             </div>
         </div>
