@@ -6,7 +6,8 @@ Class ServicoController extends Controller
 {
     public function create()
     {
-        $this->renderView('servico', 'create');
+        $ivas = Iva::find_all_by_em_vigor([1]);
+        $this->renderView('servico', 'create', ['ivas'=>$ivas]);
     }
 
     public function store()
@@ -19,26 +20,22 @@ Class ServicoController extends Controller
 
    public function show()
    {
-       $servicos = Servico::All();
-       if (is_null($servicos)) {
-           //ir para pagina de erro
-            $this->renderView('auth','home');
-       } else {
-           //mostrar a vista show passando os dados por parâmetro
-           $this->renderView('empresa', 'show', ['servicos'=>$servicos]);
-       }
+        $servicos = Servico::All();
+        //mostrar a vista show passando os dados de serviço por parâmetro
+        $this->renderView('servico', 'show', ['servicos'=>$servicos]);
    }
 
    public function edit($id)
    {
        $servico = Servico::find($id);
+       $ivas = Iva::find_all_by_em_vigor([1]);
 
        if (is_null($servico)) {
            //ir para pagina de erro
        } else
        {
-           //mostrar a vista edit passando os dados por parâmetro
-           $this->renderView('servico', 'edit', ['servico'=>$servico]);
+           //mostrar a vista edit passando os dados de serviço por parâmetro
+           $this->renderView('servico', 'edit', ['servico'=>$servico, 'ivas'=>$ivas]);
        }
    }
 
@@ -48,10 +45,10 @@ Class ServicoController extends Controller
        $servico->update_attributes($this-> getHTTPPost());
        if($servico->is_valid()){
            $servico->save();
-           //redirecionar para o index
+           //redirecionar para a home
            $this->redirectToRoute('auth', 'home');
        } else {
-           //mostrar vista edit passando o modelo como parâmetro
+           //mostrar vista edit
            $this->renderView('servico', 'edit', ['servico'=>$servico]);
        }
    }
@@ -60,7 +57,6 @@ Class ServicoController extends Controller
    {
        $servico = Servico::find($id);
        $servico->delete();
-       //redirecionar para o index
        $this->redirectToRoute('auth', 'home');
    }
 }
