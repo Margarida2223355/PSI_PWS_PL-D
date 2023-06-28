@@ -34,9 +34,12 @@
             <label for="floatingInput">Codigo Postal</label>
         </div>
         <?php
+            $user = new User;
             if(isset($user -> errors)) {
                 echo $user -> errors -> on('email');
                 echo $user -> errors -> on('password');
+                echo $user -> errors -> on('nif');
+                echo $user -> errors -> on('telefone');
             }
         ?>
         <button class="mt-3 btn btn-lg btn-primary" type="submit">Criar</button>

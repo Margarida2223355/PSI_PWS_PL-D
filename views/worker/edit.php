@@ -32,9 +32,11 @@
             <label for="floatingInput">Localidade</label>
         </div>
         <?php
-            if(isset($user -> errors)) {
-                echo $user -> errors -> on('email');
-                echo $user -> errors -> on('password');
+            if(isset($worker -> errors)) {
+                echo $worker -> errors -> on('email');
+                echo $worker -> errors -> on('password');
+                echo $worker -> errors -> on('telefone');
+                echo $worker -> errors -> on('nif');
             }
         ?>
         <button class="mt-3 btn btn-lg btn-primary" type="submit">Atualizar</button>

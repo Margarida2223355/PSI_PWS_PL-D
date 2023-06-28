@@ -1,8 +1,25 @@
 <?php
     class User extends \ActiveRecord\Model {
+        /* Validações para o User */
+        //Email e password não podem ser nulos
         static $validates_presence_of = array(
             array('email', 'message' => 'Email não pode ser nulo!'),
             array('password', 'message' => 'Password não pode ser nula!')
+        );
+        
+        //Telefone e NIF apenas podem ter 9 caracteres
+        static $validates_size_of = array(
+            array('telefone', 'maximum' => 9, 'message' => 'Telefone apenas pode ter 9 dígitos!'),
+            array('nif', 'maximum' => 9, 'message' => 'NIF apenas pode ter 9 dígitos!'),
+        );
+
+        //Password não pode ser igual à da lista
+        static $validates_exclusion_of = array(
+            array('password', 'in' => array('123', '0000', '123456789'), 'message' => 'Password necessita ser mais complexa')
+        );
+        //Email com caracteres especiais necessários (@)
+        static $validates_format_of = array(
+            array('email', 'with' => '/^[^0-9][A-z0-9_]+([.][A-z0-9_]+)*[@][A-z0-9_]+([.][A-z0-9_]+)*[.][A-z]{2,4}$/'),
         );
 
         /* Método para verificar password inserida

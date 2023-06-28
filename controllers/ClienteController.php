@@ -27,7 +27,7 @@
         }
 
         public function edit($id) {
-            $cliente = User::find($id);
+            $cliente = User::find_by_id($id);
             $this -> renderView('cliente', 'edit',['cliente'=>$cliente]);
         }
 
@@ -51,14 +51,30 @@
          * Este método recebe o id do utilizador.
         */
         public function update($id) {
+            $info = $this -> getHTTPPost();
             //Procurar utilizador na base de dados pelo id
-            $user = User::find($id);
+            $cliente = User::find_by_id($id);
 
-            /* Atualizar dados do utilizador.
-             * Os dados são recebidos através do método definido no Controller
-             * para receber dados através do método POST.
-            */
-            $user -> update_attributes($this -> getHTTPPost());
+            //Se password vier vazia, cliente não pretende alterar
+            if($info['password'] != null) {
+                /* Atualizar dados do utilizador.
+                 * Os dados são recebidos através do método definido no Controller
+                 * para receber dados através do método POST.
+                */
+                $cliente -> update_attributes($info);
+            }
+            //Se estiver vazia, atualiza tudo menos a password
+            else {
+                $cliente -> update_attributes([
+                    'username' => $info['username'],
+                    'email' => $info['email'],
+                    'telefone' => $info['telefone'],
+                    'nif' => $info['nif'],
+                    'morada' => $info['morada'],
+                    'codpostal' => $info['codpostal'],
+                    'localidade' => $info['localidade'],
+                ]);
+            }
 
             /* Caso as informações sejam válidas, guardar o utilizador
              * e voltar para a vista Home.
@@ -67,19 +83,19 @@
              * e envia o $user para a vista. Isto para que apresente o erro
              * caso o utilizador não seja válido (falta password e/ou email).
             */
-            if($user -> is_valid()) {
-                $user -> save();
+            if($cliente -> is_valid()) {
+                $cliente -> save();
                 $this -> renderView('auth', 'home');
             }
 
             else {
-                $this -> renderView('cliente', 'edit',['user' => $user]);
+                $this -> renderView('cliente', 'edit',['user' => $cliente]);
             }
         }
         public function delete($id)
     {
-        $user = User::find($id);
-        $user->delete();
+        $cliente = User::find_by_id($id);
+        $cliente->delete();
         //redirecionar para a home
         $this->redirectToRoute('auth','home');
     }

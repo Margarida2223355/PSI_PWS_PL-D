@@ -20,6 +20,10 @@
             <label for="floatingInput">Telefone</label>
         </div>
         <div class="form-floating">
+            <input type="text" class="form-control" name="nif" value="<?= $cliente->nif ?>">
+            <label for="floatingInput">NIF</label>
+        </div>
+        <div class="form-floating">
             <input type="text" class="form-control" name="morada" value="<?= $cliente->morada ?>">
             <label for="floatingInput">Morada</label>
         </div>
@@ -32,9 +36,11 @@
             <label for="floatingInput">Localidade</label>
         </div>
         <?php
-            if(isset($user -> errors)) {
-                echo $user -> errors -> on('email');
-                echo $user -> errors -> on('password');
+            if(isset($cliente -> errors)) {
+                echo $cliente -> errors -> on('email');
+                echo $cliente -> errors -> on('password');
+                echo $cliente -> errors -> on('nif');
+                echo $cliente -> errors -> on('telefone');
             }
         ?>
         <button class="mt-3 btn btn-lg btn-primary" type="submit">Atualizar</button>
