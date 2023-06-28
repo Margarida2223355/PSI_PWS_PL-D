@@ -2,10 +2,6 @@
     require_once './controllers/Controller.php';
 
     class WorkerController extends Controller {
-        
-        public function __construct() {
-            $this -> autheticationFilter();
-        }
 
         /* Método para editar funcionário.
          *
