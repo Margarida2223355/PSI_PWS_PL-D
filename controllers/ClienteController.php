@@ -1,5 +1,6 @@
 <?php
     require_once './controllers/Controller.php';
+    require_once './models/User.php';
 
     class ClienteController extends Controller {
 
@@ -36,8 +37,15 @@
 
         public function store(){
             $user = new User($this->getHTTPPost());
-            $user->save();
-            $this->renderView('auth','home');
+            $user -> role ='Cliente';
+
+            if($user -> is_valid()) {
+                $user->save();
+                $this->renderView('auth', 'home');
+            }
+            else {
+                $this->renderView('cliente','create');
+            }
         }
         /* Método para atualizar informações na base de dados.
          * Este método recebe o id do utilizador.
@@ -61,7 +69,7 @@
             */
             if($user -> is_valid()) {
                 $user -> save();
-                $this -> redirectToRoute('auth', 'home');
+                $this -> renderView('auth', 'home');
             }
 
             else {

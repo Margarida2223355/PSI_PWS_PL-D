@@ -33,9 +33,6 @@
             <input type="text" class="form-control" name="codPostal">
             <label for="floatingInput">Codigo Postal</label>
         </div>
-        <div class="form-floating">
-            <input type="hidden" class="form-control" name="role" value="cliente">
-        </div>
         <?php
             if(isset($user -> errors)) {
                 echo $user -> errors -> on('email');
