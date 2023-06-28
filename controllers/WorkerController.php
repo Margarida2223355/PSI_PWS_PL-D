@@ -2,10 +2,6 @@
     require_once './controllers/Controller.php';
 
     class WorkerController extends Controller {
-        
-        public function __construct() {
-            $this -> autheticationFilter();
-        }
 
         /* Método para editar funcionário.
          *
@@ -25,9 +21,9 @@
             //Encontra funcionário pelo id
             $worker = User::find($id);
 
-            //Se for nulo, apresenta erro
+            //Se for nulo, volta à pagina home
             if(is_null($worker)) {
-                echo("Não existe funcionário!");
+                $this -> redirectToToute('auth', 'home');
             }
             //Caso contrário, abre formulário para editar informações
             else {
@@ -111,9 +107,9 @@
             //Encontrar funcionário pelo if
             $worker = User::find($id);
 
-            //Se for nulo, apresenta erro
+            //Se for nulo, volta à pagina home
             if(is_null($worker)) {
-                echo("Não existe funcionário!");
+                $this -> redirectToToute('auth', 'home');
             }
             //Caso contrário, abre formulário para editar informações
             else {

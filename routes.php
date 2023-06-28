@@ -5,6 +5,7 @@
     require_once 'controllers/ClienteController.php';
     require_once 'controllers/ServicoController.php';
     require_once 'controllers/IvaController.php';
+    require_once 'controllers/AdminController.php';
 
     return [
         'defaultRoute' => ['GET', 'AuthController', 'index'],
@@ -60,5 +61,10 @@
             'update' => ['POST', 'IvaController', 'update'],
             'delete' => ['GET', 'IvaController', 'delete'],
         ],
+
+        'admin' => [
+            'edit' => ['GET', 'AdminController', 'edit'],
+            'update' => ['POST', 'AdminController', 'update'],
+        ]
     ];
 ?>
