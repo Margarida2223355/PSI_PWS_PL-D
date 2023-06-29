@@ -22,14 +22,6 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">Pagamentos</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de pagamentos -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
                                 <h5 class="card-title">Visualizar Folha de Obra Emitidas</h5>
                                 <a href="index.php?c=folhaobra&a=showHistorico" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de folha de obra -->
                             </div>
@@ -102,9 +94,12 @@
                             <div class="card-body">
                                 <h5 class="card-title">Empresa</h5>
                                 <a href="index.php?c=empresa&a=create" class="btn btn-primary">Criar</a>
-                                <a href="index.php?c=empresa&a=edit&id=1" class="btn btn-primary">Editar</a>
-                                <a href="index.php?c=empresa&a=show&id=1" class="btn btn-primary">Ver</a>
-                                 <!-- Botão para abrir vista de configuração de dados da empresa -->
+                                <?php if(isset($empresa)){?>
+                                    <a href="index.php?c=empresa&a=edit&id=<?= $empresa->id?>" class="btn btn-primary">Editar</a>
+                                    <a href="index.php?c=empresa&a=show&id=<?= $empresa->id?>" class="btn btn-primary">Ver</a>
+                                    <?php
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>

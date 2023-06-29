@@ -83,6 +83,7 @@
             'store' => ['POST', 'folhaobraController', 'store'], 
             'update' => ['POST', 'folhaobraController', 'update'],
             'delete' => ['GET', 'folhaobraController', 'delete'],
+            'pagar' => ['GET', 'folhaobraController', 'pagar'],
         ],
     ];
 ?>

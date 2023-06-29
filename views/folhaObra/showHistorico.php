@@ -18,7 +18,7 @@
             foreach($folhaobras as $folhaobra) { ?>
                 <tr>
                     <th><?= $folhaobra -> id?></th>
-                    <td><?= $folhaobra -> data?></td>
+                    <td><?= date('d/m/Y', strtotime($folhaobra->data))?></td>
                     <td><?= $folhaobra -> iva_total?></td>
                     <td><?= $folhaobra -> valor_total?></td>
                     <td><?= $folhaobra -> estado?></td>

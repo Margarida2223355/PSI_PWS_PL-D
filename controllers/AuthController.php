@@ -9,7 +9,8 @@
         }
 
         public function home(){
-            $this -> renderView('auth','home');
+            $empresa = Empresa::first();
+            $this -> renderView('auth','home',['empresa'=>$empresa]);
         }
         //Método para efetuar o login
         public function login() {

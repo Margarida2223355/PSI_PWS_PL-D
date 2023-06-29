@@ -1,7 +1,31 @@
 
-<form action="index.php?c=folhaobra&a=update&id=<?= $folhaobra -> id ?>"  method="POST">
+<h2><?= $empresa->designacaosocial?></h2>
+    <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">NIF</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Morada</th>
+                <th scope="col">Localidade</th>
+                <th scope="col">Codigo Postal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><input type="text" class="form-control" name="nif" value="<?=$empresa->nif?>" readonly></td>
+                <td><input type="text" class="form-control" name="email" value="<?=$empresa->email?>" readonly></td>
+                <td><input type="text" class="form-control" name="telefone" value="<?=$empresa->telefone?>" readonly></td>
+                <td><input type="text" class="form-control" name="morada" value="<?=$empresa->morada?>" readonly></td>
+                <td><input type="text" class="form-control" name="localidade" value="<?=$empresa->localidade?>" readonly></td>
+                <td><input type="text" class="form-control" name="codigopostal" value="<?=$empresa->codigopostal?>" readonly></td>
+                
+                </tr>
+            </tbody>
+            </table>
+            <form action="index.php?c=folhaobra&a=update&id=<?= $folhaobra -> id ?>"  method="POST">
     <div class="card-body">
-    <h2>Criar Folha de Obra</h2>
+    <h2>Folha de Obra</h2>
     <table class="table">
         <thead>
             <tr>
@@ -16,7 +40,7 @@
         </thead>
         <tbody>
             <tr>
-            <td><input type="text" class="form-control" name="data" value="<?= $folhaobra->data?>"></td>
+            <td><input type="text" class="form-control" name="data" value="<?= $folhaobra->data?> "readonly></td>
 
             <td><input type="text" class="form-control" name="valor_total" value="<?= $folhaobra->valor_total?>" readonly></td>
 
@@ -25,9 +49,9 @@
             <td><input type="text" class="form-control" name="iva_total" value="<?= $folhaobra->iva_total?>" readonly></td>
             <td>
                 <select class="form-select" name="estado">
-                <option selected value="em_lancamento">Em Lançamento</option>
-                <option value="emitida">Emitida</option>
-                <option value="paga">Paga</option>
+                <option value="em_lancamento" disabled>Em Lançamento</option>
+                <option value="emitida" disabled>Emitida</option>
+                <option selected value="paga">Paga</option>
                 </select>
             </td>
             <td>
@@ -48,7 +72,7 @@
         </tbody>
         </table>
     </div>
-    <button class="mt-3 btn float-end btn-primary" type="submit">Salvar Folha de Obra</button>
+    <button class="mt-3 btn float-end btn-primary" type="submit">Confirmar Pagamento</button>
 </form>
     <div class="card-body">
         <h2>Linhas de Obra</h2>
@@ -72,7 +96,7 @@
         </thead>
         <tbody>
             <tr>
-            <td><input type="text" min="1" class="form-control" name="quantidade" value="<?= $linhaobra->quantidade?>" readonly></td>
+            <td><input type="number" min="1" class="form-control" name="quantidade" value="<?= $linhaobra->quantidade?>"></td>
             <!-- pegar o servico para inserir o nome ao inves do Id -->
             <?php 
             $referencia = $linhaobra->servico_referencia;
@@ -92,7 +116,7 @@
             
             <td><input type="text" class="form-control" name="valor_total" value="<?= (($linhaobra->valor_unitario + $linhaobra->valor_iva) * $linhaobra->quantidade)?>" readonly></td>
             
-            <td>    <a href="index.php?c=linhaobra&a=delete&id=<?= $linhaobra -> id ?>" class="btn btn-danger" role="button">Remover</a>
+            <td>
             </td>
             </tr>
         </tbody>
@@ -101,7 +125,7 @@
         }
         }
     ?>
-    <td>    <a href="index.php?c=linhaobra&a=create&id=<?= $folhaobra -> id ?>" class="btn btn-info" role="button">Criar linha de obra</a>
+
 
 
 

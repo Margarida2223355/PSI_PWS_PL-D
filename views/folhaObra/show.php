@@ -16,7 +16,7 @@
             foreach($folhaobras as $folhaobra) { ?>
                 <tr>
                     <th><?= $folhaobra -> id?></th>
-                    <td><?= $folhaobra -> data?></td>
+                    <td><?= date('d/m/Y', strtotime($folhaobra->data))?></td>
                     <td><?= $folhaobra -> iva_total?></td>
                     <td><?= $folhaobra -> valor_total?></td>
                     <td><?= $folhaobra -> estado?></td>
@@ -24,7 +24,16 @@
                     <td><?= $folhaobra -> cliente_id?></td>
                     <td>
                     <td>
-                        <a href="index.php?c=folhaobra&a=edit&id=<?=$folhaobra->id ?>" class="btn btn-primary" role="button">Editar</a>
+                        <?php if($auth->getRole() == CLIENTE){?>
+                            <a href="index.php?c=folhaobra&a=pagar&id=<?=$folhaobra->id ?>" class="btn btn-primary" role="button">Pagar</a>
+                            <?php
+                        }
+                        else{?>
+                            <a href="index.php?c=folhaobra&a=edit&id=<?=$folhaobra->id ?>" class="btn btn-primary" role="button">Editar</a>
+                        <?php
+                        }
+                        ?>
+                        
                         <a href="index.php?c=folhaobra&a=delete&id=<?=$folhaobra->id ?>" class="btn btn-danger" role="button">Remover</a>
                     </td>
                 </tr>

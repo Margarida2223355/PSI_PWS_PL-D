@@ -32,23 +32,22 @@ Class EmpresaController extends Controller
 
     public function store()
     {
-        $empresa = new Empresa($this-> getHTTPPost());
         $empresas = Empresa::exists();
 
-        if($empresas == null) {
-            if ($empresa->is_valid()) {
-                $empresa->save();
-                //redirecionar para o index
-                $this->redirectToRoute('empresa', 'index');
-            } else {
-                //mostrar vista create passando o modelo como parâmetro
-                $this->renderView('empresa', 'create', ['empresa' => $empresa]);
-            }
+    if ($empresas == null) {
+        $empresa = new Empresa($this->getHTTPPost());
+
+        if ($empresa->is_valid()) {
+            $empresa->save();
+            // Redirecionar para a home
+            $this->redirectToRoute('auth', 'home');
+        } else {
+            // Mostrar vista create passando o modelo como parâmetro
+            $this->renderView('empresa', 'create', ['empresa' => $empresa]);
         }
-        else if ($empresas != null)
-        {
-            $this->redirectToRoute('empresa', 'index');
-        }
+    } else {
+        $this->redirectToRoute('auth', 'home');
+    }
     }
 
    public function show($id)

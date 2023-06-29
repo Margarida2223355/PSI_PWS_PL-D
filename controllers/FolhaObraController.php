@@ -5,8 +5,12 @@ require_once 'controllers/Controller.php';
 
 Class FolhaObraController extends Controller
 {
+    public function __construct() {
+        $this -> authenticationFilter();
+    }
     public function create()
     {
+        $empresa = Empresa::first();
         $users = User::All();
         $servicos = Servico::All();
         $clientes = [];
@@ -17,14 +21,17 @@ Class FolhaObraController extends Controller
             }
         }
 
-        $this->renderView('folhaobra', 'create',['clientes'=>$clientes, 'servicos'=>$servicos]);
+        $this->renderView('folhaobra', 'create',['clientes'=>$clientes, 'servicos'=>$servicos,'empresa'=>$empresa]);
     }
 
     public function store()
     { 
         $folhaobra = new FolhaObra($this-> getHTTPPost());
         $folhaobras = FolhaObra::All();
-
+        if($folhaobra->data == null){
+            $folhaobra->data = date('Y-m-d');
+        }
+        
         $folhaobra->save();
         $this->renderView('folhaobra', 'show',['folhaobras'=>$folhaobras]);
 
@@ -68,7 +75,7 @@ Class FolhaObraController extends Controller
     else{
         $folhaobras = FolhaObra::find('all', array(
             'conditions' => array(
-                'funcionario_id = ? AND cliente_id = ? AND estado = ?',
+                'funcionario_id = ? OR cliente_id = ? AND estado = ?',
                 $user,
                 $user,
                 'emitida'
@@ -97,6 +104,21 @@ Class FolhaObraController extends Controller
        {
            //mostrar a vista edit passando os dados por parâmetro
            $this->renderView('folhaobra', 'edit', ['folhaobra'=>$folhaobra,'servicos'=>$servicos]);
+       }
+   }
+
+public function pagar($id)
+   {
+       $folhaobra = FolhaObra::find($id);
+       $servicos = Servico::all();
+       $empresa = Empresa::first();
+
+       if (is_null($folhaobra)) {
+           //ir para pagina de erro
+       } else
+       {
+           //mostrar a vista edit passando os dados por parâmetro
+           $this->renderView('folhaobra', 'pagar', ['folhaobra'=>$folhaobra,'servicos'=>$servicos,'empresa'=>$empresa]);
        }
    }
 

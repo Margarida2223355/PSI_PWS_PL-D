@@ -1,5 +1,29 @@
 <div class="container">
     <div class="card">
+    <h2><?= $empresa->designacaosocial?></h2>
+    <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">NIF</th>
+                <th scope="col">Email</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Morada</th>
+                <th scope="col">Localidade</th>
+                <th scope="col">Codigo Postal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><input type="text" class="form-control" name="nif" value="<?=$empresa->nif?>" readonly></td>
+                <td><input type="text" class="form-control" name="email" value="<?=$empresa->email?>" readonly></td>
+                <td><input type="text" class="form-control" name="telefone" value="<?=$empresa->telefone?>" readonly></td>
+                <td><input type="text" class="form-control" name="morada" value="<?=$empresa->morada?>" readonly></td>
+                <td><input type="text" class="form-control" name="localidade" value="<?=$empresa->localidade?>" readonly></td>
+                <td><input type="text" class="form-control" name="codigopostal" value="<?=$empresa->codigopostal?>" readonly></td>
+                
+                </tr>
+            </tbody>
+            </table>
     <form action="index.php?c=folhaobra&a=store" method="POST">
         <div class="card-body">
         <h2>Criar Folha de Obra</h2>
