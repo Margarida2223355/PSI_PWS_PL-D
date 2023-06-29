@@ -15,7 +15,7 @@
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title">Lista de Folhas de Obra</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de lista de folhas de obra -->
+                                <a href="index.php?c=folhaobra&a=show" class="btn btn-primary">Mostrar</a><!-- Botão para abrir vista de lista de folhas de obra -->
                             </div>
                         </div>
                     </div>
@@ -30,8 +30,8 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">Visualizar Folha de Obra</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de folha de obra -->
+                                <h5 class="card-title">Visualizar Folha de Obra Emitidas</h5>
+                                <a href="index.php?c=folhaobra&a=showHistorico" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de folha de obra -->
                             </div>
                         </div>
                     </div>
@@ -50,8 +50,10 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title">Emissão Folhas de Obra</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de emissão de folha de obra -->
+                                <h5 class="card-title">Folhas de Obra</h5>
+                                <a href="index.php?c=folhaobra&a=create" class="btn btn-primary">Criar</a> 
+                                <a href="index.php?c=folhaobra&a=show" class="btn btn-primary">Mostrar</a>
+                                <a href="index.php?c=folhaobra&a=showHistorico" class="btn btn-primary">Emitidas</a>
                             </div>
                         </div>
                     </div>
@@ -80,14 +82,6 @@
                                 <h5 class="card-title">Gestão de Taxas de IVA</h5>
                                 <a href="index.php?c=iva&a=create" class="btn btn-primary">Criar</a>
                                 <a href="index.php?c=iva&a=show" class="btn btn-primary">Mostrar</a> <!-- Botão para abrir vista de gestão de taxas de IVA -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Histórico de Folhas de Obra</h5>
-                                <a href="index.php" class="btn btn-primary">Abrir</a> <!-- Botão para abrir vista de histórico de folhas de obra -->
                             </div>
                         </div>
                     </div>

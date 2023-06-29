@@ -23,8 +23,12 @@ Class LinhaObraController extends Controller
         // calcular o iva
         $linhaObra->valor_iva = $servico->preco_hora * ($iva->percentagem / 100);
 
+
         $folhaobra->valor_total += (($linhaObra->valor_unitario + $linhaObra->valor_iva) * $linhaObra->quantidade);
-        $folhaobra->iva_total += (($linhaObra->valor_unitario + $linhaObra->valor_iva) * $linhaObra->quantidade) - ($linhaObra->valor_unitario * $linhaObra->quantidade);
+
+        $folhaobra->iva_total += $linhaObra->valor_iva * $linhaObra->quantidade;
+
+        $folhaobra->sub_total+= $linhaObra->quantidade * $linhaObra->valor_unitario;
 
         $folhaobra->save();
         $linhaObra->save();

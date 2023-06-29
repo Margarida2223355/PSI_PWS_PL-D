@@ -1,3 +1,4 @@
+
 <table class="table w-auto text-center">
     <thead>
         <tr>
@@ -12,6 +13,7 @@
         </tr>
     </thead>
     <tbody>
+    <?= "<h5>Folhas de obra do " . $auth->getUsername() . "</h5>"?>
         <?php
             foreach($folhaobras as $folhaobra) { ?>
                 <tr>
@@ -23,7 +25,6 @@
                     <td><?= $folhaobra -> funcionario_id?></td>
                     <td><?= $folhaobra -> cliente_id?></td>
                     <td>
-                    <td>
                         <a href="index.php?c=folhaobra&a=edit&id=<?=$folhaobra->id ?>" class="btn btn-primary" role="button">Editar</a>
                         <a href="index.php?c=folhaobra&a=delete&id=<?=$folhaobra->id ?>" class="btn btn-danger" role="button">Remover</a>
                     </td>
@@ -31,5 +32,5 @@
             <?php
             }
         ?>
-    </tbody>
+</tbody>
 </table>

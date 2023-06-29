@@ -7,6 +7,7 @@
             <tr>
             <th scope="col">Data</th>
             <th scope="col">Valor Total</th>
+            <th scope="col">Sub Total</th>
             <th scope="col">IVA Total</th>
             <th scope="col">Estado</th>
             <th scope="col">Cliente</th>
@@ -16,13 +17,17 @@
         <tbody>
             <tr>
             <td><input type="text" class="form-control" name="data" value="<?= $folhaobra->data?>"></td>
+
             <td><input type="text" class="form-control" name="valor_total" value="<?= $folhaobra->valor_total?>" readonly></td>
+
+            <td><input type="text" class="form-control" name="sub_total" value="<?= $folhaobra->sub_total?>" readonly></td>
+
             <td><input type="text" class="form-control" name="iva_total" value="<?= $folhaobra->iva_total?>" readonly></td>
             <td>
                 <select class="form-select" name="estado">
                 <option selected value="em_lancamento">Em Lançamento</option>
-                <option value="emitida"disabled>Emitida</option>
-                <option value="paga"disabled>Paga</option>
+                <option value="emitida">Emitida</option>
+                <option value="paga">Paga</option>
                 </select>
             </td>
             <td>
@@ -43,6 +48,8 @@
         </tbody>
         </table>
     </div>
+    <button class="mt-3 btn btn-float-right btn-primary" type="submit">Salvar Folha de Obra</button>
+</form>
     <div class="card-body">
         <h2>Linhas de Obra</h2>
 
@@ -58,6 +65,7 @@
             <th scope="col">Serviço</th>
             <th scope="col">Valor Unitário</th>
             <th scope="col">Valor IVA</th>
+            <th scope="col">Sub Total</th>
             <th scope="col">Valor Total</th>
             <th scope="col"></th>
             </tr>
@@ -73,10 +81,13 @@
             </td>
             <td><input type="text" class="form-control" name="valor_unitario" id="valor_unitario" value="<?= $linhaobra->valor_unitario?>" readonly></td>
             
-            <td><input type="text" class="form-control" name="valor_iva" id="valor_iva" value="<?= $linhaobra->valor_iva?>" readonly></td>
-            <td><input type="text" class="form-control" name="valor_total_LO" value="<?= (($linhaobra->valor_unitario + $linhaobra->valor_iva) * $linhaobra->quantidade)?>" readonly></td>
+            <td><input type="text" class="form-control" name="iva_total" id="valor_iva" value="<?= $linhaobra->valor_iva?>" readonly></td>
+
+            <td><input type="text" class="form-control" name="sub_total" value="<?= $linhaobra->quantidade * $linhaobra->valor_unitario?>" readonly></td>
             
-            <td>    <a href="index.php?c=linhaobra&a=delete&id=<?= $linhaobra -> id ?>" class="btn btn-info" role="button">Remover</a>
+            <td><input type="text" class="form-control" name="valor_total" value="<?= (($linhaobra->valor_unitario + $linhaobra->valor_iva) * $linhaobra->quantidade)?>" readonly></td>
+            
+            <td>    <a href="index.php?c=linhaobra&a=delete&id=<?= $linhaobra -> id ?>" class="btn btn-danger" role="button">Remover</a>
             </td>
             </tr>
         </tbody>
@@ -86,7 +97,6 @@
         }
     ?>
     <td>    <a href="index.php?c=linhaobra&a=create&id=<?= $folhaobra -> id ?>" class="btn btn-info" role="button">Criar linha de obra</a>
-    <button class="mt-3 btn btn-lg btn-primary" type="submit">Criar Folha de Obra</button>
-</form>
+
 
 

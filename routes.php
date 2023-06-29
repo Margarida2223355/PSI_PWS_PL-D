@@ -77,6 +77,7 @@
         ],
         'folhaobra' => [
             'show' => ['GET', 'folhaobraController', 'show'],
+            'showHistorico' =>['GET', 'folhaobraController', 'showHistorico'],
             'edit' => ['GET', 'folhaobraController', 'edit'],
             'create' => ['GET', 'folhaobraController', 'create'],
             'store' => ['POST', 'folhaobraController', 'store'], 

@@ -23,21 +23,66 @@ Class FolhaObraController extends Controller
     public function store()
     { 
         $folhaobra = new FolhaObra($this-> getHTTPPost());
+        $folhaobras = FolhaObra::All();
 
         $folhaobra->save();
-        $this->renderView('folhaobra', 'show');
+        $this->renderView('folhaobra', 'show',['folhaobras'=>$folhaobras]);
 
     }
 
    public function show()
    {
-       $folhaobras = FolhaObra::All();
-       if (is_null($folhaobras)) {
-           //ir para pagina de erro
+        $auth = new Auth();
+        $user = $auth->getId();
+        $userRole = $auth->getRole();
+
+        if($userRole == CLIENTE){
+            $folhaobras = FolhaObra::find('all', array(
+                'conditions' => array(
+                    'cliente_id = ?',
+                    $user,
+                )
+            ));
+        }
+        else{
+            $folhaobras = FolhaObra::All();
+        }
+        if (is_null($folhaobras)) {
+            //ir para pagina de erro
+            $this->renderView('auth','home');
+        } else {
+            //mostrar a vista show passando os dados por parâmetro
+            $this->renderView('folhaobra', 'show', ['folhaobras'=>$folhaobras]);
+        }
+   }
+
+   public function showHistorico()
+   {
+    $auth = new Auth();
+    $user = $auth->getId();
+    $userRole = $auth->getRole();
+    if($userRole == ADMINISTRADOR){
+        $folhaobras = FolhaObra::find('all', array(
+            'conditions' => array('estado = ?', 'emitida')));
+    }
+    else{
+        $folhaobras = FolhaObra::find('all', array(
+            'conditions' => array(
+                'funcionario_id = ? AND cliente_id = ? AND estado = ?',
+                $user,
+                $user,
+                'emitida'
+            )
+        ));
+    }
+    
+
+       if (empty($folhaobras)) {
+           //ir para pagina home
             $this->renderView('auth','home');
        } else {
            //mostrar a vista show passando os dados por parâmetro
-           $this->renderView('folhaobra', 'show', ['folhaobras'=>$folhaobras]);
+           $this->renderView('folhaobra', 'showHistorico', ['folhaobras'=>$folhaobras]);
        }
    }
 

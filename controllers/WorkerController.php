@@ -23,7 +23,7 @@
 
             //Se for nulo, volta à pagina home
             if(is_null($worker)) {
-                $this -> redirectToToute('auth', 'home');
+                $this -> redirectToRoute('auth', 'home');
             }
             //Caso contrário, abre formulário para editar informações
             else {
@@ -109,7 +109,7 @@
 
             //Se for nulo, volta à pagina home
             if(is_null($worker)) {
-                $this -> redirectToToute('auth', 'home');
+                $this -> redirectToRoute('auth', 'home');
             }
             //Caso contrário, abre formulário para editar informações
             else {
