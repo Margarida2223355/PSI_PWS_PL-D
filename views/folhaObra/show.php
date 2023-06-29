@@ -10,15 +10,15 @@
     </thead>
     <tbody>
         <?php
-            foreach($ivas as $iva) { ?>
+            foreach($folhaobras as $folhaobra) { ?>
                 <tr>
-                    <th><?= $iva -> id?></th>
-                    <td><?= $iva -> percentagem?></td>
-                    <td><?= $iva -> descricao?></td>
-                    <td><?= $iva -> em_vigor?></td>
+                    <th><?= $folhaobra -> id?></th>
+                    <td><?= $folhaobra -> data?></td>
+                    <td><?= $folhaobra -> valor_total?></td>
+                    <td><?= $folhaobra -> iva_total?></td>
                     <td>
-                        <a href="index.php?c=iva&a=edit&id=<?=$iva->id ?>" class="btn btn-info" role="button">Editar</a>
-                        <a href="index.php?c=iva&a=delete&id=<?=$iva->id ?>" class="btn btn-info" role="button">Remover</a>
+                        <a href="index.php?c=folhaobra&a=edit&id=<?=$folhaobra->id ?>" class="btn btn-info" role="button">Editar</a>
+                        <a href="index.php?c=folhaobra&a=delete&id=<?=$folhaobra->id ?>" class="btn btn-info" role="button">Remover</a>
                     </td>
                 </tr>
             <?php

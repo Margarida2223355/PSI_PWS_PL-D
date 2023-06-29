@@ -1,7 +1,7 @@
 <main class="form-signin w-25 m-auto text-center">
     <form action="index.php?c=iva&a=update&id=<?= $iva -> id ?>" method="POST">
         <h1 class="h3 my-3 fw-normal">
-            Servico <b><?= $iva -> id ?></b>
+            IVA <b><?= $iva -> descricao ?></b>
         </h1>
         <div class="row">
             <div class="col-sm-7">

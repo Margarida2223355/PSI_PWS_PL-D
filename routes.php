@@ -6,6 +6,8 @@
     require_once 'controllers/ServicoController.php';
     require_once 'controllers/IvaController.php';
     require_once 'controllers/AdminController.php';
+    require_once 'controllers/LinhaObraController.php';
+    require_once 'controllers/FolhaobraController.php';
 
     return [
         'defaultRoute' => ['GET', 'AuthController', 'index'],
@@ -61,10 +63,25 @@
             'update' => ['POST', 'IvaController', 'update'],
             'delete' => ['GET', 'IvaController', 'delete'],
         ],
-
         'admin' => [
             'edit' => ['GET', 'AdminController', 'edit'],
             'update' => ['POST', 'AdminController', 'update'],
-        ]
+        ],
+        'linhaobra' => [
+            'show' => ['GET', 'linhaobraController', 'show'],
+            'edit' => ['GET', 'linhaobraController', 'edit'],
+            'create' => ['GET', 'linhaobraController', 'create'],
+            'store' => ['POST', 'linhaobraController', 'store'], 
+            'update' => ['POST', 'linhaobraController', 'update'],
+            'delete' => ['GET', 'linhaobraController', 'delete'],
+        ],
+        'folhaobra' => [
+            'show' => ['GET', 'folhaobraController', 'show'],
+            'edit' => ['GET', 'folhaobraController', 'edit'],
+            'create' => ['GET', 'folhaobraController', 'create'],
+            'store' => ['POST', 'folhaobraController', 'store'], 
+            'update' => ['POST', 'folhaobraController', 'update'],
+            'delete' => ['GET', 'folhaobraController', 'delete'],
+        ],
     ];
 ?>
